@@ -23,7 +23,7 @@ This document is dedicated to description of offer to design and implementation 
 
 **Cluster** - container of *Engines*, *Cluster* also can has *Cluster Dashboard* module.
 
-**Cluster Dashboard** - set of REST services which provides functionality to configure *Cluster* (i.e. deployed *Engines*) and other functionality. *Cluster Dashboard* provides possibility to create **UI**.
+**Cluster Dashboard** - set of REST services which provides functionality to configure *Cluster* (i.e. deployed *Engines*) and other functionality. *Cluster Dashboard* communicates with *Engines* using JMX. *Cluster Dashboard* provides possibility to create **UI**.
 
 **Cluster Administrator**  - a responsible person who manages *Cluster*, different *Clusters* can have different *Cluster Administrators*.
 
