@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.env.PropertySource;
-import org.springframework.scheduling.annotation.Scheduled;
 
 import com.exadel.amc.mc.engine.Engine;
 import com.exadel.amc.mc.engine.EngineConstants;
@@ -30,7 +29,7 @@ public class EngineInstance implements Engine {
     @Autowired
     private LogInitializer logInitializer;
 
-    private List<Scheduler>schedulers;
+    private List<Scheduler>schedulers = new ArrayList<>();;
     private Logger log = LoggerFactory.getLogger(EngineInstance.class);
 
     @Override

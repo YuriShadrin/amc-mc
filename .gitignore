@@ -3,6 +3,11 @@
 /mc-engine/.classpath
 /mc-engine/.project
 
+/mc-war/.settings/
+/mc-war/target/
+/mc-war/.classpath
+/mc-war/.project
+
 /mc-sources/mc-wikipedia/.settings/
 /mc-sources/mc-wikipedia/target/
 /mc-sources/mc-wikipedia/.classpath
@@ -12,3 +17,5 @@
 /mc-sources/mc-youtube/target/
 /mc-sources/mc-youtube/.classpath
 /mc-sources/mc-youtube/.project
+
+

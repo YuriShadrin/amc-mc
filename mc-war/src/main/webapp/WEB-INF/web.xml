@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+
+	<display-name>Metrics Collector</display-name>
+
+	<listener>
+		<listener-class>com.exadel.amc.mc.war.EngineLauncher</listener-class>
+	</listener>
+
+</web-app>

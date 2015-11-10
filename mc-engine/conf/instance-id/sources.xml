@@ -13,7 +13,7 @@
 	-->
 
 	<source>
-		<id>test</id>
+		<id>youtube</id>
 		<name>TEST source</name>
 		<disabled>false</disabled>
 		<limits>

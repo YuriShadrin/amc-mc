@@ -123,7 +123,7 @@ public abstract class AbstractScheduler<M extends MetricsData> implements Schedu
                 long tfStartTime = currentTime();
                 int spentLimits = 0;
 
-                log.debug("Time frame loop started.");
+                int tfTasksProcessed = 0;
                 while (working) {
 
                     InputDataItem inputDataItem = getInputDataQueue().nextItem();
@@ -134,6 +134,7 @@ public abstract class AbstractScheduler<M extends MetricsData> implements Schedu
                             log.debug("Executing task '{}:{}'...", source.getSourceId(), inputDataItem.getId());
 
                             TaskStatus taskStatus = task.execute(inputDataItem);
+                            tfTasksProcessed++;
 
                             long taskTime = taskStatus.getEndTime() - taskStatus.getStartTime();
 
@@ -189,12 +190,14 @@ public abstract class AbstractScheduler<M extends MetricsData> implements Schedu
                     schedulerStatus.setEndTime(currentTime());
                 } // time frame loop
 
-                long tfEndTime = currentTime();
-                log.debug("Time frame loop finished, spent time {}ms.", tfEndTime - tfStartTime);
+                if (tfTasksProcessed > 0) {
+                    long tfEndTime = currentTime();
+                    log.debug("Time frame loop finished, tasks processed {}, spent time {}ms.", tfTasksProcessed, tfEndTime - tfStartTime);
+                }
 
                 // wait for a new time frame (mainly if call limit exceeded))
                 long remainTime = tfStartTime + timeFrameLifetime - currentTime();
-                if (remainTime > 0) {
+                if (remainTime > 0 && working) {
                     log.debug("Slepping {}ms...", remainTime);
                     sleep(remainTime);
                 }
