@@ -1,4 +1,4 @@
-# Metrics Collector Model
+# Metrics Collector
 ## Purpose
 This document is dedicated to description of offer to design and implementation of information system for retrieving and collecting information from social networks about different media content - **Metrics Collector** (or MC, name can be discussed). Such information will contain some metrics (number of visitors, number of likes, posts, etc). MC does not have any analytics blocks or modules, MC just provides information for other Analytics Systems.
 
