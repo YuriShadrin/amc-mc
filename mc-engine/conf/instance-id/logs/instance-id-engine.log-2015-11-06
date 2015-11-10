@@ -1,0 +1,305 @@
+2015-11-06 16:25:00,380 [INFO ] - Initializing instance 'instance-id'...
+2015-11-06 16:25:00,380 [DEBUG] - Loading 'instance-id' configuration from D:\AMC\amc-mc\mc-engine\conf\instance-id\sources.xml
+2015-11-06 16:25:00,528 [DEBUG] - Configuration has been loaded.
+2015-11-06 16:25:00,528 [DEBUG] - Initializing scheduler 'YouTube source' (youtube)...
+2015-11-06 16:25:00,535 [DEBUG] - Initializing scheduler 'Wikipedia source' (wikipedia)...
+2015-11-06 16:25:00,539 [INFO ] - Instance 'instance-id' has been initialized.
+2015-11-06 16:55:05,733 [INFO ] - Initializing instance 'instance-id'...
+2015-11-06 16:55:05,733 [DEBUG] - Loading 'instance-id' configuration from D:\AMC\amc-mc\mc-engine\conf\instance-id\sources.xml
+2015-11-06 16:55:05,887 [DEBUG] - Configuration has been loaded.
+2015-11-06 16:55:05,887 [DEBUG] - Initializing scheduler 'YouTube source' (youtube)...
+2015-11-06 16:55:05,894 [DEBUG] - Initializing scheduler 'Wikipedia source' (wikipedia)...
+2015-11-06 16:55:05,898 [INFO ] - Instance 'instance-id' has been initialized.
+2015-11-06 17:10:14,157 [INFO ] - Initializing instance 'instance-id'...
+2015-11-06 17:10:14,157 [DEBUG] - Loading 'instance-id' configuration from D:\AMC\amc-mc\mc-engine\conf\instance-id\sources.xml
+2015-11-06 17:10:14,302 [DEBUG] - Configuration has been loaded.
+2015-11-06 17:10:14,303 [DEBUG] - Initializing scheduler 'YouTube source' (youtube)...
+2015-11-06 17:10:14,309 [DEBUG] - Initializing scheduler 'Wikipedia source' (wikipedia)...
+2015-11-06 17:10:14,314 [INFO ] - Instance 'instance-id' has been initialized.
+2015-11-06 17:10:45,867 [INFO ] - Initializing instance 'instance-id'...
+2015-11-06 17:10:45,867 [DEBUG] - Loading 'instance-id' configuration from D:\AMC\amc-mc\mc-engine\conf\instance-id\sources.xml
+2015-11-06 17:10:46,010 [DEBUG] - Configuration has been loaded.
+2015-11-06 17:10:46,010 [DEBUG] - Initializing scheduler 'YouTube source' (youtube)...
+2015-11-06 17:10:46,017 [DEBUG] - Initializing scheduler 'Wikipedia source' (wikipedia)...
+2015-11-06 17:10:46,022 [INFO ] - Instance 'instance-id' has been initialized.
+2015-11-06 17:10:46,022 [DEBUG] - Scheduler work thread started.
+2015-11-06 17:10:46,022 [DEBUG] - Scheduler work thread started.
+2015-11-06 17:10:46,022 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:10:46,022 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:10:47,022 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:10:47,022 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:10:48,022 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:10:48,022 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:10:49,023 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:10:49,023 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:10:50,023 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:10:50,023 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:10:51,023 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:10:51,023 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:10:52,023 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:10:52,023 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:10:53,023 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:10:53,023 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:10:54,023 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:10:54,023 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:10:55,023 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:10:55,023 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:10:56,023 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:10:56,023 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:10:57,023 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:10:57,023 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:10:58,023 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:10:58,023 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:10:59,025 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:10:59,025 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:11:00,025 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:11:00,025 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:11:01,025 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:11:01,025 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:11:02,025 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:11:02,025 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:11:58,784 [INFO ] - Initializing instance 'instance-id'...
+2015-11-06 17:11:58,785 [DEBUG] - Loading 'instance-id' configuration from D:\AMC\amc-mc\mc-engine\conf\instance-id\sources.xml
+2015-11-06 17:11:58,934 [DEBUG] - Configuration has been loaded.
+2015-11-06 17:11:58,934 [DEBUG] - Initializing scheduler 'YouTube source' (youtube)...
+2015-11-06 17:11:58,941 [DEBUG] - Initializing scheduler 'Wikipedia source' (wikipedia)...
+2015-11-06 17:11:58,945 [INFO ] - Instance 'instance-id' has been initialized.
+2015-11-06 17:11:58,945 [DEBUG] - Scheduler work thread started.
+2015-11-06 17:11:58,945 [DEBUG] - Scheduler work thread started.
+2015-11-06 17:11:58,945 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:11:58,945 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:11:59,945 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:11:59,945 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:12:00,945 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:12:00,945 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:12:01,945 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:12:01,945 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:12:02,945 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:12:02,945 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:12:03,945 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:12:03,945 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:12:04,945 [DEBUG] - Scheduler work thread stopped.
+2015-11-06 17:12:04,945 [DEBUG] - Scheduler work thread stopped.
+2015-11-06 17:13:08,066 [INFO ] - Initializing instance 'instance-id'...
+2015-11-06 17:13:08,066 [DEBUG] - Loading 'instance-id' configuration from D:\AMC\amc-mc\mc-engine\conf\instance-id\sources.xml
+2015-11-06 17:13:08,214 [DEBUG] - Configuration has been loaded.
+2015-11-06 17:13:08,214 [DEBUG] - Initializing scheduler 'YouTube source' (youtube)...
+2015-11-06 17:13:08,220 [DEBUG] - Initializing scheduler 'Wikipedia source' (wikipedia)...
+2015-11-06 17:13:08,224 [INFO ] - Instance 'instance-id' has been initialized.
+2015-11-06 17:13:08,225 [DEBUG] - Scheduler work thread started.
+2015-11-06 17:13:08,225 [DEBUG] - Scheduler work thread started.
+2015-11-06 17:13:08,225 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:13:08,225 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:13:09,225 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:13:09,225 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:13:10,225 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:13:10,225 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:13:11,225 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:13:11,225 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:13:12,225 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:13:12,225 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:13:13,225 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:13:13,225 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:13:14,225 [DEBUG] - Scheduler work thread stopped.
+2015-11-06 17:13:14,225 [DEBUG] - Scheduler work thread stopped.
+2015-11-06 17:18:45,178 [INFO ] - Initializing instance 'instance-id'...
+2015-11-06 17:18:45,178 [DEBUG] - Loading 'instance-id' configuration from D:\AMC\amc-mc\mc-engine\conf\instance-id\sources.xml
+2015-11-06 17:18:45,344 [DEBUG] - Configuration has been loaded.
+2015-11-06 17:18:45,344 [DEBUG] - Initializing scheduler 'YouTube source' (youtube)...
+2015-11-06 17:18:45,352 [DEBUG] - Initializing scheduler 'Wikipedia source' (wikipedia)...
+2015-11-06 17:18:45,360 [INFO ] - Instance 'instance-id' has been initialized.
+2015-11-06 17:18:45,361 [DEBUG] - Scheduler work thread started.
+2015-11-06 17:18:45,361 [DEBUG] - Scheduler work thread started.
+2015-11-06 17:18:45,361 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:18:45,361 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:18:46,361 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:18:46,361 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:18:47,361 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:18:47,361 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:18:48,361 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:18:48,361 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:18:49,361 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:18:49,361 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:18:50,361 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:18:50,361 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:23:15,488 [INFO ] - Initializing instance 'instance-id'...
+2015-11-06 17:23:15,488 [DEBUG] - Loading 'instance-id' configuration from D:\AMC\amc-mc\mc-engine\conf\instance-id\sources.xml
+2015-11-06 17:23:15,639 [DEBUG] - Configuration has been loaded.
+2015-11-06 17:23:15,639 [DEBUG] - Initializing scheduler 'YouTube source' (youtube)...
+2015-11-06 17:23:15,646 [DEBUG] - Initializing scheduler 'Wikipedia source' (wikipedia)...
+2015-11-06 17:23:15,650 [INFO ] - Instance 'instance-id' has been initialized.
+2015-11-06 17:23:15,650 [DEBUG] - Scheduler work thread started.
+2015-11-06 17:23:15,650 [DEBUG] - Scheduler work thread started.
+2015-11-06 17:23:15,650 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:23:15,650 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:23:16,650 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:23:16,651 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:23:17,650 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:23:17,651 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:23:18,650 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:23:18,651 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:23:19,650 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:23:19,651 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:23:20,651 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:23:20,652 [DEBUG] - SSSS
+2015-11-06 17:23:21,651 [DEBUG] - SSSS
+2015-11-06 17:23:42,083 [INFO ] - Initializing instance 'instance-id'...
+2015-11-06 17:23:42,083 [DEBUG] - Loading 'instance-id' configuration from D:\AMC\amc-mc\mc-engine\conf\instance-id\sources.xml
+2015-11-06 17:23:42,237 [DEBUG] - Configuration has been loaded.
+2015-11-06 17:23:42,237 [DEBUG] - Initializing scheduler 'YouTube source' (youtube)...
+2015-11-06 17:23:42,244 [DEBUG] - Initializing scheduler 'Wikipedia source' (wikipedia)...
+2015-11-06 17:23:42,248 [INFO ] - Instance 'instance-id' has been initialized.
+2015-11-06 17:23:42,249 [DEBUG] - Scheduler work thread started.
+2015-11-06 17:23:42,249 [DEBUG] - Scheduler work thread started.
+2015-11-06 17:23:42,249 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:23:42,249 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:23:43,249 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:23:43,249 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:23:44,249 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:23:44,249 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:23:45,249 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:23:45,249 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:23:46,249 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:23:46,249 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:23:47,249 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:23:47,249 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:23:48,249 [DEBUG] - SSSS
+2015-11-06 17:23:48,249 [DEBUG] - SSSS
+2015-11-06 17:26:20,189 [INFO ] - Initializing instance 'instance-id'...
+2015-11-06 17:26:20,189 [DEBUG] - Loading 'instance-id' configuration from D:\AMC\amc-mc\mc-engine\conf\instance-id\sources.xml
+2015-11-06 17:26:20,344 [DEBUG] - Configuration has been loaded.
+2015-11-06 17:26:20,344 [DEBUG] - Initializing scheduler 'YouTube source' (youtube)...
+2015-11-06 17:26:20,351 [DEBUG] - Initializing scheduler 'Wikipedia source' (wikipedia)...
+2015-11-06 17:26:20,356 [INFO ] - Instance 'instance-id' has been initialized.
+2015-11-06 17:26:20,356 [DEBUG] - Scheduler work thread started.
+2015-11-06 17:26:20,356 [DEBUG] - Scheduler work thread started.
+2015-11-06 17:26:20,356 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:26:20,356 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:26:21,357 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:26:21,357 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:26:22,357 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:26:22,357 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:26:23,357 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:26:23,357 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:26:24,357 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:26:24,357 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:26:25,357 [DEBUG] - SSSS
+2015-11-06 17:26:25,357 [DEBUG] - SSSS
+2015-11-06 17:30:22,350 [INFO ] - Initializing instance 'instance-id'...
+2015-11-06 17:30:22,351 [DEBUG] - Loading 'instance-id' configuration from D:\AMC\amc-mc\mc-engine\conf\instance-id\sources.xml
+2015-11-06 17:30:22,505 [DEBUG] - Configuration has been loaded.
+2015-11-06 17:30:22,505 [DEBUG] - Initializing scheduler 'YouTube source' (youtube)...
+2015-11-06 17:30:22,512 [DEBUG] - Initializing scheduler 'Wikipedia source' (wikipedia)...
+2015-11-06 17:30:22,516 [INFO ] - Instance 'instance-id' has been initialized.
+2015-11-06 17:30:22,516 [DEBUG] - Scheduler work thread started.
+2015-11-06 17:30:22,516 [DEBUG] - Scheduler work thread started.
+2015-11-06 17:30:22,517 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:30:22,517 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:30:23,517 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:30:23,517 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:30:24,517 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:30:24,517 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:30:25,517 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:30:25,517 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:30:26,517 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:30:26,517 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:30:27,517 [DEBUG] - SSSS
+2015-11-06 17:30:27,517 [DEBUG] - SSSS
+2015-11-06 17:31:02,298 [INFO ] - Initializing instance 'instance-id'...
+2015-11-06 17:31:02,299 [DEBUG] - Loading 'instance-id' configuration from D:\AMC\amc-mc\mc-engine\conf\instance-id\sources.xml
+2015-11-06 17:31:02,450 [DEBUG] - Configuration has been loaded.
+2015-11-06 17:31:02,450 [DEBUG] - Initializing scheduler 'YouTube source' (youtube)...
+2015-11-06 17:31:02,457 [DEBUG] - Initializing scheduler 'Wikipedia source' (wikipedia)...
+2015-11-06 17:31:02,462 [INFO ] - Instance 'instance-id' has been initialized.
+2015-11-06 17:31:02,462 [DEBUG] - Scheduler work thread started.
+2015-11-06 17:31:02,462 [DEBUG] - Scheduler work thread started.
+2015-11-06 17:31:02,462 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:31:02,462 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:31:03,462 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:31:03,462 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:31:04,462 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:31:04,462 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:31:05,462 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:31:05,462 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:31:06,462 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:31:06,462 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:31:07,462 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:31:07,462 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:31:08,462 [DEBUG] - SSSS
+2015-11-06 17:31:08,462 [DEBUG] - SSSS
+2015-11-06 17:33:28,598 [INFO ] - Initializing instance 'instance-id'...
+2015-11-06 17:33:28,599 [DEBUG] - Loading 'instance-id' configuration from D:\AMC\amc-mc\mc-engine\conf\instance-id\sources.xml
+2015-11-06 17:33:28,756 [DEBUG] - Configuration has been loaded.
+2015-11-06 17:33:28,756 [DEBUG] - Initializing scheduler 'YouTube source' (youtube)...
+2015-11-06 17:33:28,763 [DEBUG] - Initializing scheduler 'Wikipedia source' (wikipedia)...
+2015-11-06 17:33:28,767 [INFO ] - Instance 'instance-id' has been initialized.
+2015-11-06 17:33:28,768 [DEBUG] - Scheduler work thread started.
+2015-11-06 17:33:28,768 [DEBUG] - Scheduler work thread started.
+2015-11-06 17:33:28,768 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:33:28,768 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:33:29,768 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:33:29,768 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:33:30,768 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:33:30,768 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:33:31,769 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:33:31,769 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:33:32,769 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:33:32,769 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:33:33,769 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:33:33,769 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:33:34,769 [DEBUG] - SSSS
+2015-11-06 17:33:34,769 [DEBUG] - SSSS
+2015-11-06 17:34:04,911 [INFO ] - Initializing instance 'instance-id'...
+2015-11-06 17:34:04,912 [DEBUG] - Loading 'instance-id' configuration from D:\AMC\amc-mc\mc-engine\conf\instance-id\sources.xml
+2015-11-06 17:34:05,072 [DEBUG] - Configuration has been loaded.
+2015-11-06 17:34:05,073 [DEBUG] - Initializing scheduler 'YouTube source' (youtube)...
+2015-11-06 17:34:05,080 [DEBUG] - Initializing scheduler 'Wikipedia source' (wikipedia)...
+2015-11-06 17:34:05,084 [INFO ] - Instance 'instance-id' has been initialized.
+2015-11-06 17:34:05,084 [DEBUG] - Scheduler work thread started.
+2015-11-06 17:34:05,085 [DEBUG] - Scheduler work thread started.
+2015-11-06 17:34:05,085 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:34:05,085 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:34:06,085 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:34:06,085 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:34:07,086 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:34:07,086 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:34:08,086 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:34:08,086 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:34:09,086 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:34:09,086 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:34:10,086 [DEBUG] - SSSS
+2015-11-06 17:34:10,086 [DEBUG] - SSSS
+2015-11-06 17:35:12,962 [INFO ] - Initializing instance 'instance-id'...
+2015-11-06 17:35:12,962 [DEBUG] - Loading 'instance-id' configuration from D:\AMC\amc-mc\mc-engine\conf\instance-id\sources.xml
+2015-11-06 17:35:13,117 [DEBUG] - Configuration has been loaded.
+2015-11-06 17:35:13,118 [DEBUG] - Initializing scheduler 'YouTube source' (youtube)...
+2015-11-06 17:35:13,125 [DEBUG] - Initializing scheduler 'Wikipedia source' (wikipedia)...
+2015-11-06 17:35:13,129 [INFO ] - Instance 'instance-id' has been initialized.
+2015-11-06 17:35:13,129 [DEBUG] - Scheduler work thread started.
+2015-11-06 17:35:13,129 [DEBUG] - Scheduler work thread started.
+2015-11-06 17:35:13,130 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:35:13,130 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:35:14,130 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:35:14,130 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:35:15,130 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:35:15,130 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:35:16,130 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:35:16,130 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:35:17,131 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:35:17,131 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:35:18,131 [DEBUG] - SSSS
+2015-11-06 17:35:18,131 [DEBUG] - SSSS
+2015-11-06 17:35:23,130 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:35:23,130 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:35:24,130 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:35:24,130 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:35:25,130 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:35:25,130 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:35:26,130 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:35:26,130 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:35:27,130 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:35:27,130 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:35:28,130 [DEBUG] - AAAAAAAAAAAAAAAAAAA wikipedia
+2015-11-06 17:35:28,130 [DEBUG] - AAAAAAAAAAAAAAAAAAA youtube
+2015-11-06 17:35:29,130 [DEBUG] - Scheduler work thread stopped.
+2015-11-06 17:35:29,131 [DEBUG] - Scheduler work thread stopped.

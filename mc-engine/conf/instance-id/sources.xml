@@ -1,0 +1,26 @@
+<sources>
+        <!--
+	<source>
+		<id>youtube</id>
+		<name>YouTube source</name>
+		<disabled>false</disabled>
+		<limits>
+			<time-frame>1d</time-frame>
+			<call-limit>10</call-limit>
+		</limits>
+		<strategy>stretch</strategy>
+	</source>
+	-->
+
+	<source>
+		<id>test</id>
+		<name>TEST source</name>
+		<disabled>false</disabled>
+		<limits>
+			<time-frame>3s</time-frame>
+			<call-limit>10</call-limit>
+			<intensity>5</intensity>
+		</limits>
+		<!-- strategy>stretch</strategy -->
+	</source>
+</sources>

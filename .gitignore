@@ -1,0 +1,14 @@
+/mc-engine/.settings/
+/mc-engine/target/
+/mc-engine/.classpath
+/mc-engine/.project
+
+/mc-sources/mc-wikipedia/.settings/
+/mc-sources/mc-wikipedia/target/
+/mc-sources/mc-wikipedia/.classpath
+/mc-sources/mc-wikipedia/.project
+
+/mc-sources/mc-youtube/.settings/
+/mc-sources/mc-youtube/target/
+/mc-sources/mc-youtube/.classpath
+/mc-sources/mc-youtube/.project
