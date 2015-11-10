@@ -30,7 +30,10 @@ This document is dedicated to description of offer to design and implementation 
 The system can contain other additional modules, for example *Processing Monitor*, *Data Replication*, etc.
 
 Schematically:
- 
+
+![](https://github.com/YuriShadrin/amc-mc/blob/master/docs/scheme1.png)
+
+
 The common steps of processing is the following:
 
 1. Engine reads configuration and starts all configured Schedulers.
@@ -48,5 +51,5 @@ The common steps of processing is the following:
 * Separately deployed Engines work isolated from each other.
 * Tomcat provides access through HTTP/HTTPS, this access can be used for UI.
  
-
+![](https://github.com/YuriShadrin/amc-mc/blob/master/docs/scheme2.png)
 
