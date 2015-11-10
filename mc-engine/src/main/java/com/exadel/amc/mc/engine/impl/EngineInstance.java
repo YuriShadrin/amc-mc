@@ -3,6 +3,7 @@ package com.exadel.amc.mc.engine.impl;
 import java.io.File;
 import java.lang.management.ManagementFactory;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.management.InstanceAlreadyExistsException;
@@ -90,38 +91,31 @@ public class EngineInstance implements Engine {
 
     @Override
     public void start() throws EngineException {
-        for (Scheduler scheduler  : schedulers) {
-            if (scheduler.getSchedulerStatus().getSchedulerState() == SchedulerState.STOPPED) {
-                scheduler.start();
-            }
-        }
+        for (Iterator<Scheduler>it = getSchedulers(SchedulerState.STOPPED); it.hasNext(); it.next().start());
     }
 
     @Override
     public void stop() throws EngineException {
-        for (Scheduler scheduler  : schedulers) {
-            scheduler.stop();
-        }
+        for (Iterator<Scheduler>it = getSchedulers(SchedulerState.ANY); it.hasNext(); it.next().stop());
     }
 
     @Override
     public void suspend() throws EngineException {
-        for (Scheduler scheduler  : schedulers) {
-            if (scheduler.getSchedulerStatus().getSchedulerState() == SchedulerState.RUNNING) {
-                scheduler.suspend();
-            }
-        }
+        for (Iterator<Scheduler>it = getSchedulers(SchedulerState.RUNNING); it.hasNext(); it.next().suspend());
     }
 
     @Override
     public void resume() throws EngineException {
-        for (Scheduler scheduler  : schedulers) {
-            if (scheduler.getSchedulerStatus().getSchedulerState() == SchedulerState.SUSPENDED) {
-                scheduler.resume();
-            }
-        }
+        for (Iterator<Scheduler>it = getSchedulers(SchedulerState.SUSPENDED); it.hasNext(); it.next().resume());
     }
 
+    private Iterator<Scheduler>getSchedulers(SchedulerState schedulerState) {
+        return schedulers.stream().filter(
+                s -> schedulerState == SchedulerState.ANY ? 
+                        true : 
+                        s.getSchedulerStatus().getSchedulerState() == schedulerState).iterator();
+    }
+    
     private File getInstanceDir(String instanceId) throws InitializationException {
         String dir = System.getProperty(EngineConstants.MC_ROOT_DIR);
         if (dir == null) {
@@ -186,17 +180,15 @@ public class EngineInstance implements Engine {
     }
 
     public SchedulerStatus getSchedulerStatus(String sourceId) {
-        for (Scheduler scheduler  : schedulers) {
-            if (scheduler.getSource().getSourceId().equals(sourceId)) {
-                return scheduler.getSchedulerStatus();
-            }
-        }
-        return null;
+        return schedulers.stream().filter(s -> s.getSource().getSourceId().equals(sourceId)).
+                findFirst().get().getSchedulerStatus();
     } 
 
-    
-    
     public static void main(String[] args) throws Exception {
+
+//        ZonedDateTime now = ZonedDateTime.now( ZoneOffset.UTC );
+//        System.out.println(now);
+        
         EngineInstance ei = new EngineInstance();
         ei.init("instance-id");
         ei.start();
