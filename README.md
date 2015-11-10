@@ -11,7 +11,7 @@ This document is dedicated to description of offer to design and implementation 
 
 **Data Saver** - module which saves *Metrics Data* received from *Connector* into *Storage*.
 
-**Storage** - SQL DB (or any other).
+**Storage** - SQL DB (or any other storage).
 
 **Task** - module which combines *Connector(s)* and *Data Saver(s)* to process tasks. *Task* can be considered also as container of *Connectors* and *Data Savers* chain. It is assumed that *Task* will contain one *Connector* and one *Data Saver* (at least on first phase).
 
@@ -23,7 +23,7 @@ This document is dedicated to description of offer to design and implementation 
 
 **Cluster** - container of *Engines*, *Cluster* also can has *Cluster Dashboard* module.
 
-**Cluster Dashboard** - set of REST services which provides functionality to configure *Cluster* (i.e. deployed *Engines*) and other functionality. *Cluster Dashboard* communicates with *Engines* using JMX. *Cluster Dashboard* provides possibility to create **UI**.
+**Cluster Dashboard** - set of REST services which provides methods to configure *Cluster* (i.e. deployed *Engines*) and any other functionality (monitoring, eventing, etc). *Cluster Dashboard* communicates with deployed *Engines* through JMX. The main purpose of *Cluster Dashboard* is to provide possibility to create **UI**.
 
 **Cluster Administrator**  - a responsible person who manages *Cluster*, different *Clusters* can have different *Cluster Administrators*.
 
@@ -32,7 +32,6 @@ The system can contain other additional modules, for example *Processing Monitor
 **Schematically:**
 
 ![](https://github.com/YuriShadrin/amc-mc/blob/master/docs/scheme1.png)
-
 
 The common steps of processing is the following:
 
