@@ -37,12 +37,12 @@ The system can contain other additional modules, for example *Processing Monitor
 The common steps of processing is the following:
 
 1. Engine reads configuration and starts all configured Schedulers.
-2. Scheduler in accordance with configuration starts Task (TIMESTAMP)
+2. Scheduler in accordance with configuration starts Task (*TIMESTAMP*)
 3. Task performs an internal logic (calls Connector and Saver which are contained inside Task).
   * Connector calls Sources and returns Metrics Data to Task.
   * Task passes Metrics Data to Data Saver.
   * Data Saver saves data into Storage.
-4. Scheduler calculates next start of Task taking into consideration existing limitations and TIMESTAMP.
+4. Scheduler calculates next start of Task taking into consideration existing limitations and *TIMESTAMP*.
 5. Scheduler performs step #1. 
 
 ##Deployment
