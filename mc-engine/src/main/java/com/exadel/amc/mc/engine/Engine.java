@@ -20,27 +20,27 @@ public interface Engine extends Initializable<String> {
      * Means start all stopped Schedulers.
      * @throws EngineException
      */
-    void start() throws EngineException;;
+    void start() throws EngineException;
     
     /**
      * Stops engine.
      * Means stop all running Schedulers.
      * @throws EngineException
      */
-    void stop() throws EngineException;;
+    void stop() throws EngineException;
     
     /**
      * Suspend engine.
      * Means suspend all running Schedulers.
      * @throws EngineException
      */
-    void suspend() throws EngineException;;
+    void suspend() throws EngineException;
     
     /**
      * Resume engine.
      * Means resume all suspended Schedulers.
      * @throws EngineException
      */
-    void resume() throws EngineException;;
+    void resume() throws EngineException;
 
 }

@@ -1,8 +1,17 @@
 package com.exadel.amc.mc.engine.impl;
 
 import java.io.File;
+import java.lang.management.ManagementFactory;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.management.InstanceAlreadyExistsException;
+import javax.management.InstanceNotFoundException;
+import javax.management.MBeanRegistrationException;
+import javax.management.MBeanServer;
+import javax.management.MalformedObjectNameException;
+import javax.management.NotCompliantMBeanException;
+import javax.management.ObjectName;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,18 +19,24 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.env.PropertySource;
+import org.springframework.stereotype.Component;
 
 import com.exadel.amc.mc.engine.Engine;
 import com.exadel.amc.mc.engine.EngineConstants;
 import com.exadel.amc.mc.engine.Scheduler;
 import com.exadel.amc.mc.engine.SchedulerState;
+import com.exadel.amc.mc.engine.SchedulerStatus;
 import com.exadel.amc.mc.engine.conf.InstanceConfiguration;
 import com.exadel.amc.mc.engine.conf.Source;
 import com.exadel.amc.mc.engine.exception.EngineException;
 import com.exadel.amc.mc.engine.exception.InitializationException;
+import com.exadel.amc.mc.engine.impl.jmx.EngineManager;
 import com.exadel.amc.mc.engine.impl.log.LogInitializer;
 
+@Component
 public class EngineInstance implements Engine {
+
+    private static final String MBEAN_CATEGORY = "com.exadel.amc.mc.engine:type=";
 
     @Autowired
     private InstanceConfiguration config;
@@ -30,26 +45,53 @@ public class EngineInstance implements Engine {
     private LogInitializer logInitializer;
 
     private List<Scheduler>schedulers = new ArrayList<>();;
+
     private Logger log = LoggerFactory.getLogger(EngineInstance.class);
 
     @Override
     public void init(String instanceId) throws InitializationException {
 
         File instanceDir = getInstanceDir(instanceId);
-        AbstractApplicationContext appContext = loadApplicationContext(instanceId, instanceDir.getAbsolutePath());
+        AbstractApplicationContext appContext =
+                loadApplicationContext(instanceId, instanceDir.getAbsolutePath());
 
         log.info("Initializing instance '{}'...", instanceId);
 
         config.init(instanceId);
         schedulers = initSchedulers(appContext, config.getSources());
 
+        try {
+            registerMBean(instanceId);
+        } catch (Exception ex) {
+            log.error("Could not register MBean.", ex);
+        }
+
         log.info("Instance '{}' has been initialized.", instanceId);
+    }
+
+    private void registerMBean(String instanceId) throws
+        MalformedObjectNameException,
+        InstanceAlreadyExistsException,
+        MBeanRegistrationException,
+        NotCompliantMBeanException {
+
+        String objectName = MBEAN_CATEGORY + instanceId;
+        log.debug("Registering MBean {}", objectName);
+        MBeanServer server = ManagementFactory.getPlatformMBeanServer();
+        ObjectName mbeanName = new ObjectName(objectName);
+        try {
+            server.unregisterMBean(mbeanName);
+        } catch (InstanceNotFoundException e) {
+        }
+        EngineManager em = new EngineManager(this);
+        server.registerMBean(em, mbeanName);
+        log.debug("MBean {} registered.", objectName);
     }
 
     @Override
     public void start() throws EngineException {
         for (Scheduler scheduler  : schedulers) {
-            if (scheduler.getStatus().getSchedulerState() == SchedulerState.STOPPED) {
+            if (scheduler.getSchedulerStatus().getSchedulerState() == SchedulerState.STOPPED) {
                 scheduler.start();
             }
         }
@@ -65,7 +107,7 @@ public class EngineInstance implements Engine {
     @Override
     public void suspend() throws EngineException {
         for (Scheduler scheduler  : schedulers) {
-            if (scheduler.getStatus().getSchedulerState() == SchedulerState.RUNNING) {
+            if (scheduler.getSchedulerStatus().getSchedulerState() == SchedulerState.RUNNING) {
                 scheduler.suspend();
             }
         }
@@ -74,7 +116,7 @@ public class EngineInstance implements Engine {
     @Override
     public void resume() throws EngineException {
         for (Scheduler scheduler  : schedulers) {
-            if (scheduler.getStatus().getSchedulerState() == SchedulerState.SUSPENDED) {
+            if (scheduler.getSchedulerStatus().getSchedulerState() == SchedulerState.SUSPENDED) {
                 scheduler.resume();
             }
         }
@@ -139,29 +181,44 @@ public class EngineInstance implements Engine {
         return schedulers;
     }
 
+    public List<Source>getConfiguredSources() {
+        return config.getSources();
+    }
+
+    public SchedulerStatus getSchedulerStatus(String sourceId) {
+        for (Scheduler scheduler  : schedulers) {
+            if (scheduler.getSource().getSourceId().equals(sourceId)) {
+                return scheduler.getSchedulerStatus();
+            }
+        }
+        return null;
+    } 
+
+    
+    
     public static void main(String[] args) throws Exception {
         EngineInstance ei = new EngineInstance();
         ei.init("instance-id");
         ei.start();
 
-//        System.err.println("0");
-//        
-//        Thread.sleep(3000);
-//        ei.suspend();
-//
-//        System.err.println("1");
-//        
-//        Thread.sleep(10000);
-//        ei.resume();
-//
-//        System.err.println("2");
-//        
-//        Thread.sleep(5000);
-//        ei.stop();
-//        
-//        
-//        System.err.println("3");
-        
+        //        System.err.println("0");
+        //        
+        //        Thread.sleep(3000);
+        //        ei.suspend();
+        //
+        //        System.err.println("1");
+        //        
+        //        Thread.sleep(10000);
+        //        ei.resume();
+        //
+        //        System.err.println("2");
+        //        
+        //        Thread.sleep(5000);
+        //        ei.stop();
+        //        
+        //        
+        //        System.err.println("3");
+
     }
 
 }

@@ -11,6 +11,8 @@ import com.exadel.amc.mc.engine.exception.SchedulerException;
  */
 public interface Scheduler extends Initializable<Source> {
 
+    Source getSource();
+
     /**
      * Initializes scheduler.
      * @param source - source configuration.
@@ -48,6 +50,6 @@ public interface Scheduler extends Initializable<Source> {
      * Returns current state of scheduler.
      * @return
      */
-    SchedulerStatus getStatus();
+    SchedulerStatus getSchedulerStatus();
 
 }

@@ -217,8 +217,6 @@ public abstract class AbstractScheduler<M extends MetricsData> implements Schedu
         getConnector().init(source);
         getDataSaver().init(source);
         getInputDataQueue().init(source);
-        schedulerThread = new SchedulerThread();
-        workThread = new Thread(schedulerThread, source.getSourceId() + "-thread");
     }
 
     private long currentTime() {
@@ -250,35 +248,52 @@ public abstract class AbstractScheduler<M extends MetricsData> implements Schedu
 
     @Override
     public void start() throws SchedulerException {
-        schedulerStatus.setStartTime(currentTime());
-        schedulerStatus.setInitialTaskCount(getInputDataQueue().size());
-        schedulerStatus.setRemainedTaskCount(schedulerStatus.getInitialTaskCount());
-        schedulerStatus.setSchedulerState(SchedulerState.RUNNING);
-        startWorkThread();
+        if (schedulerStatus.getSchedulerState() == SchedulerState.STOPPED) {
+            schedulerThread = new SchedulerThread();
+            workThread = new Thread(schedulerThread, source.getSourceId() + "-thread");
+            schedulerStatus.setStartTime(currentTime());
+            schedulerStatus.setInitialTaskCount(getInputDataQueue().size());
+            schedulerStatus.setRemainedTaskCount(schedulerStatus.getInitialTaskCount());
+            schedulerStatus.setSchedulerState(SchedulerState.RUNNING);
+            startWorkThread();
+        }
     }
 
     @Override
     public void stop() throws SchedulerException {
-        stopWorkThread();
-        schedulerStatus.setEndTime(currentTime());
-        schedulerStatus.setSchedulerState(SchedulerState.STOPPED);
+        if (schedulerStatus.getSchedulerState() != SchedulerState.STOPPED) {
+            stopWorkThread();
+            schedulerStatus.setEndTime(currentTime());
+            schedulerStatus.setSchedulerState(SchedulerState.STOPPED);
+        }
     }
 
     @Override
     public void suspend() throws SchedulerException {
-        suspendWorkThread();
-        schedulerStatus.setSchedulerState(SchedulerState.SUSPENDED);
+        if (schedulerStatus.getSchedulerState() == SchedulerState.RUNNING) {
+            suspendWorkThread();
+            schedulerStatus.setSchedulerState(SchedulerState.SUSPENDED);
+        }
     }
 
     @Override
     public void resume() throws SchedulerException {
-        resumeWorkThread();
-        schedulerStatus.setSchedulerState(SchedulerState.RUNNING);
+        if (schedulerStatus.getSchedulerState() == SchedulerState.SUSPENDED) {
+            resumeWorkThread();
+            schedulerStatus.setSchedulerState(SchedulerState.RUNNING);
+        }
     }
 
     @Override
-    public SchedulerStatus getStatus() {
-        return schedulerStatus;
+    public SchedulerStatus getSchedulerStatus() {
+        return schedulerStatus.clone();
+    }
+
+    
+    
+    @Override
+    public Source getSource() {
+        return source;
     }
 
     protected Task createTask(Connector<M>connector, DataSaver<M>dataSaver) {

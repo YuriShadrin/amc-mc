@@ -1,11 +1,11 @@
 package com.exadel.amc.mc.engine;
 
-public class SchedulerStatus {
+public class SchedulerStatus implements Cloneable {
 
-    private SchedulerState schedulerState;
-    private long startTime, endTime;
-    private int initialTaskCount, processedTaskCount, failedTaskCount, remainedTaskCount;
-    private double taskProcessingMinTime, taskProcessingMaxTime, taskProcessingAverageTime;
+    volatile private SchedulerState schedulerState;
+    volatile private long startTime, endTime;
+    volatile private int initialTaskCount, processedTaskCount, failedTaskCount, remainedTaskCount;
+    volatile private double taskProcessingMinTime, taskProcessingMaxTime, taskProcessingAverageTime;
 
     public SchedulerStatus() {
         schedulerState = SchedulerState.STOPPED;
@@ -90,6 +90,22 @@ public class SchedulerStatus {
                 + ", failedTaskCount=" + failedTaskCount + ", remainedTaskCount=" + remainedTaskCount
                 + ", taskProcessingMinTime=" + taskProcessingMinTime + ", taskProcessingMaxTime="
                 + taskProcessingMaxTime + ", taskProcessingAverageTime=" + taskProcessingAverageTime + "]";
+    }
+
+    @Override
+    public synchronized SchedulerStatus clone() {
+        SchedulerStatus clone = new SchedulerStatus();
+        clone.endTime = this.endTime;
+        clone.failedTaskCount = this.failedTaskCount;
+        clone.initialTaskCount = this.initialTaskCount;
+        clone.processedTaskCount = this.processedTaskCount;
+        clone.remainedTaskCount = this.remainedTaskCount;
+        clone.schedulerState = this.schedulerState;
+        clone.startTime = this.startTime;
+        clone.taskProcessingAverageTime = this.taskProcessingAverageTime;
+        clone.taskProcessingMaxTime = this.taskProcessingMaxTime;
+        clone.taskProcessingMinTime = this.taskProcessingMinTime;
+        return clone;
     }
 
 }
