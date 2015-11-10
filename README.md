@@ -29,7 +29,7 @@ This document is dedicated to description of offer to design and implementation 
 
 The system can contain other additional modules, for example *Processing Monitor*, *Data Replication*, etc.
 
-Schematically:
+**Schematically:**
 
 ![](https://github.com/YuriShadrin/amc-mc/blob/master/docs/scheme1.png)
 
