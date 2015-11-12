@@ -8,6 +8,7 @@ import java.util.Properties;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -17,20 +18,21 @@ import com.exadel.amc.mc.engine.InputDataItem;
 import com.exadel.amc.mc.engine.conf.Source;
 import com.exadel.amc.mc.engine.exception.ConnectorException;
 import com.exadel.amc.mc.engine.exception.InitializationException;
+import com.exadel.amc.mc.source.youtube.data.YoutubeSearchResult;
+import com.exadel.amc.mc.source.youtube.rest.YoutubeClient;
 
 @Component
 public class YoutubeConnector implements Connector<YoutubeMetricsData> {
 
     private static final String KEYS_PROPERTIES = "youtube_keys.properties";
-    private static final String DATE_FORMAT = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'";
-    private static final String GOOGLEAPIS_URL = "https://content.googleapis.com/youtube/v3";
-
     private Logger log = LoggerFactory.getLogger(YoutubeConnector.class);
 
     @Value("${" + EngineConstants.MC_KEYS_DIR + "}")
     private String keysDir; 
 
-
+    @Autowired
+    private YoutubeClient youtube;
+    
     @Override
     public void init(Source source) throws InitializationException {
         log.debug("Loading Youtube keys...");
@@ -40,6 +42,7 @@ public class YoutubeConnector implements Connector<YoutubeMetricsData> {
             reader = new FileReader(keysDir + File.separator + KEYS_PROPERTIES);
             props.load(reader);
             reader.close();
+            youtube.init(props.getProperty("api.key"));
         } catch (IOException ex) {
             throw new InitializationException("Could not read properties from file " + keysDir + KEYS_PROPERTIES, ex);
         }
@@ -51,6 +54,17 @@ public class YoutubeConnector implements Connector<YoutubeMetricsData> {
         log.debug("Getting Youtube metrics...");
         
         YoutubeMetricsData data = new YoutubeMetricsData();
+        YoutubeSearchResult<?>ysr;
+        try {
+            if("V".equals(dataItem.getType())) {
+                ysr = youtube.getVideoById(dataItem.getId());
+            } else {
+                ysr = youtube.getChannelById(dataItem.getId());
+            }
+        } catch (Exception ex) {
+            throw new ConnectorException("Could not get metrics data.", ex);
+        }
+        data.setYoutubeSearchResult(ysr);
         log.debug("Youtube metrics were got.");
         return data;
     }

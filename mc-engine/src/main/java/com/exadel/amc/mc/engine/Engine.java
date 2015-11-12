@@ -21,7 +21,7 @@ public interface Engine extends Initializable<String> {
      * @throws EngineException
      */
     void start() throws EngineException;
-    
+
     /**
      * Stops engine.
      * Means stop all running Schedulers.

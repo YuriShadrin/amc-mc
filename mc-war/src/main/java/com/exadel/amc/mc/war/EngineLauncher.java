@@ -21,6 +21,7 @@ public class EngineLauncher implements ServletContextListener {
     @Override
     public void contextInitialized(ServletContextEvent sce) {
         String engineId = getEngineId(sce.getServletContext());
+        Thread.currentThread().setName(engineId + "-engine-thread");
         engine = new EngineInstance();
         try {
             log.info("Starting '{}' engine...", engineId);

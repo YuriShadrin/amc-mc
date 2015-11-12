@@ -8,7 +8,6 @@ import com.exadel.amc.mc.engine.Connector;
 import com.exadel.amc.mc.engine.DataSaver;
 import com.exadel.amc.mc.engine.InputDataQueue;
 import com.exadel.amc.mc.engine.impl.AbstractScheduler;
-import com.exadel.amc.mc.engine.impl.DefaultInputDataQueue;
 
 @Lazy @Component("youtube")
 public class YoutubeScheduler extends AbstractScheduler<YoutubeMetricsData> {
@@ -20,7 +19,7 @@ public class YoutubeScheduler extends AbstractScheduler<YoutubeMetricsData> {
     private YoutubeDataSaver dataSaver;
     
     @Autowired
-    private DefaultInputDataQueue dataQueue; 
+    private YoutubeInputDataQueue dataQueue; 
     
     @Override
     protected Connector<YoutubeMetricsData> getConnector() {

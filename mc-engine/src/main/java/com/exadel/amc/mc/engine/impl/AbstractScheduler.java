@@ -37,8 +37,8 @@ public abstract class AbstractScheduler<M extends MetricsData> implements Schedu
 
     protected class SchedulerThread implements Runnable {
 
-        protected boolean working = true;
-        protected boolean suspended = false;
+        protected volatile boolean working = true;
+        protected volatile boolean suspended = false;
 
         protected long suspend() {
             long suspendTime = 0L;
@@ -93,7 +93,8 @@ public abstract class AbstractScheduler<M extends MetricsData> implements Schedu
         @Override
         public void run() {
 
-            log.debug("'{}' scheduler work thread started.", source.getSourceId());
+            log.debug("'{}({})' scheduler work thread started, processing  strategy '{}'.",
+                    source.getSourceId(), source.getSourceName(), source.getProcessingStrategy());
 
             Limits limits = source.getLimits();
             long timeFrameLifetime = limits.getTimeFrameMillis();
@@ -115,6 +116,9 @@ public abstract class AbstractScheduler<M extends MetricsData> implements Schedu
 
             Task task = createTask(getConnector(), getDataSaver());
             long totalTime = 0L;
+
+            log.debug("Timeframe life time {}ms, sleep between task time {}ms",
+                    timeFrameLifetime, sleepBetweenTasks);
 
             // scheduler loop
             while (working) {
@@ -138,19 +142,11 @@ public abstract class AbstractScheduler<M extends MetricsData> implements Schedu
 
                             long taskTime = taskStatus.getEndTime() - taskStatus.getStartTime();
 
-                            schedulerStatus.setProcessedTaskCount(schedulerStatus.getProcessedTaskCount() + 1);
-                            schedulerStatus.setRemainedTaskCount(getInputDataQueue().size());
-                            if (taskStatus.getException() != null) {
-                                schedulerStatus.setFailedTaskCount(schedulerStatus.getFailedTaskCount() + 1);
-                            }
+                            totalTime += taskTime;
+                            
+                            log.debug("Task '{}:{}' completed, spent time {}ms.", source.getSourceId(), inputDataItem.getId(), taskTime);
 
-                            if (schedulerStatus.getTaskProcessingMinTime() > taskTime) {
-                                schedulerStatus.setTaskProcessingMinTime(taskTime);
-                            }
-
-                            if (schedulerStatus.getTaskProcessingMaxTime() < taskTime) {
-                                schedulerStatus.setTaskProcessingMaxTime(taskTime);
-                            }
+                            updateSchedulerStatus(taskStatus.getException() == null, getInputDataQueue().size(), taskTime, totalTime);
 
                             long intensityCorrection = 0L;
                             if (limits.getIntensity() > 0) {
@@ -160,21 +156,21 @@ public abstract class AbstractScheduler<M extends MetricsData> implements Schedu
                                 }
                             }
                             
-                            totalTime += taskTime;
-                            schedulerStatus.setTaskProcessingAverageTime(totalTime / schedulerStatus.getProcessedTaskCount());
-
                             spentLimits += taskStatus.getSpentLimits();
 
                             if (spentLimits >= limits.getCallLimits()) {
-                                // no more limits, break time frame loop
-//System.err.println("no more limits, break time frame loop");
+                                log.debug("All limits inside one time frame exhausted, time frame loop ended.");
                                 break;
                             }
 
                             if (sleepBetweenTasks - taskTime > intensityCorrection) {
+                                log.debug("Sleepping {}ms (sleep between tasks)...", sleepBetweenTasks - taskTime);
                                 sleep(sleepBetweenTasks - taskTime);
                             } else {
-                                sleep(intensityCorrection);
+                                if (intensityCorrection > 0) {
+                                    log.debug("Sleepping {}ms (intensity correction)...", intensityCorrection);
+                                    sleep(intensityCorrection);
+                                }
                             }
                         }
 
@@ -183,33 +179,48 @@ public abstract class AbstractScheduler<M extends MetricsData> implements Schedu
                     }
                     if (currentTime() - tfStartTime >= timeFrameLifetime) {
                         // no more time, break time frame loop
-//System.err.println("no more time, break time frame loop " + timeFrameLifetime);
+                        log.debug("No more time, break time frame loop. ");
                         break;
                     } 
 
-                    schedulerStatus.setEndTime(currentTime());
                 } // time frame loop
 
                 if (tfTasksProcessed > 0) {
                     long tfEndTime = currentTime();
-                    log.debug("Time frame loop finished, tasks processed {}, spent time {}ms.", tfTasksProcessed, tfEndTime - tfStartTime);
+                    log.debug("Time frame loop finished, tasks processed {}, spent time {}ms.",
+                            tfTasksProcessed, tfEndTime - tfStartTime);
                 }
 
                 // wait for a new time frame (mainly if call limit exceeded))
                 long remainTime = tfStartTime + timeFrameLifetime - currentTime();
                 if (remainTime > 0 && working) {
-                    log.debug("Slepping {}ms...", remainTime);
+                    log.debug("Waiting for a new time frame {}ms...", remainTime);
                     sleep(remainTime);
                 }
 
             }
 
-            log.debug("'{}' scheduler work thread stopped.", source.getSourceId());
-            schedulerStatus.setEndTime(currentTime());
-            schedulerStatus.setSchedulerState(SchedulerState.STOPPED);
+            log.debug("'{}()' scheduler work thread stopped. Total tasks time {}ms.",
+                    source.getSourceId(), source.getSourceName(), totalTime);
         }
     }
 
+    protected void updateSchedulerStatus(boolean taskFailed, int remainedTaskCount, long taskTime, long totalTime) {
+        schedulerStatus.setProcessedTaskCount(schedulerStatus.getProcessedTaskCount() + 1);
+        schedulerStatus.setTaskProcessingTime(totalTime);
+        if (taskFailed) {
+            schedulerStatus.setFailedTaskCount(schedulerStatus.getFailedTaskCount() + 1);
+        }
+        schedulerStatus.setRemainedTaskCount(remainedTaskCount);
+        if (schedulerStatus.getTaskProcessingMinTime() > taskTime) {
+            schedulerStatus.setTaskProcessingMinTime(taskTime);
+        }
+        if (schedulerStatus.getTaskProcessingMaxTime() < taskTime) {
+            schedulerStatus.setTaskProcessingMaxTime(taskTime);
+        }
+        schedulerStatus.setTaskProcessingAverageTime(totalTime / schedulerStatus.getProcessedTaskCount());
+    }
+    
     @Override
     public void init(Source source) throws InitializationException {
         this.source = source;
@@ -286,11 +297,10 @@ public abstract class AbstractScheduler<M extends MetricsData> implements Schedu
 
     @Override
     public SchedulerStatus getSchedulerStatus() {
-        return schedulerStatus.clone();
+        SchedulerStatus status = schedulerStatus.clone();
+        return status;
     }
 
-    
-    
     @Override
     public Source getSource() {
         return source;

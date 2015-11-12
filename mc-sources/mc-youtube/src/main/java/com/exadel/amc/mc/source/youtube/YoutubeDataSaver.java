@@ -22,8 +22,7 @@ public class YoutubeDataSaver implements DataSaver<YoutubeMetricsData> {
     @Override
     public void saveMetricsData(InputDataItem dataItem, YoutubeMetricsData data) throws DataSaverException {
         log.debug("Saving Youtube metrics...");
-
-    
+        log.info("{} {} {}", dataItem.getId(), data.getYoutubeSearchResult().getKind(), data.getYoutubeSearchResult().getItems().size());
         log.debug("Youtube metrics were saved.");
     }
 

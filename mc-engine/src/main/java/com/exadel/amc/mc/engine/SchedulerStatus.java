@@ -3,7 +3,7 @@ package com.exadel.amc.mc.engine;
 public class SchedulerStatus implements Cloneable {
 
     volatile private SchedulerState schedulerState;
-    volatile private long startTime, endTime;
+    volatile private long startTime, endTime, taskProcessingTime;
     volatile private int initialTaskCount, processedTaskCount, failedTaskCount, remainedTaskCount;
     volatile private double taskProcessingMinTime, taskProcessingMaxTime, taskProcessingAverageTime;
 
@@ -83,17 +83,16 @@ public class SchedulerStatus implements Cloneable {
         this.taskProcessingAverageTime = taskProcessingAverageTime;
     }
 
-    @Override
-    public String toString() {
-        return "SchedulerStatus [schedulerState=" + schedulerState + ", startTime=" + startTime + ", endTime=" + endTime
-                + ", initialTaskCount=" + initialTaskCount + ", processedTaskCount=" + processedTaskCount
-                + ", failedTaskCount=" + failedTaskCount + ", remainedTaskCount=" + remainedTaskCount
-                + ", taskProcessingMinTime=" + taskProcessingMinTime + ", taskProcessingMaxTime="
-                + taskProcessingMaxTime + ", taskProcessingAverageTime=" + taskProcessingAverageTime + "]";
+    public long getTaskProcessingTime() {
+        return taskProcessingTime;
+    }
+
+    public void setTaskProcessingTime(long taskProcessingTime) {
+        this.taskProcessingTime = taskProcessingTime;
     }
 
     @Override
-    public synchronized SchedulerStatus clone() {
+    public SchedulerStatus clone() {
         SchedulerStatus clone = new SchedulerStatus();
         clone.endTime = this.endTime;
         clone.failedTaskCount = this.failedTaskCount;
