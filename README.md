@@ -3,9 +3,9 @@
 This document is dedicated to description of offer to design and implementation of information system for retrieving and collecting information from social networks about different media content - **Metrics Collector** (or MC, name can be discussed). Such information will contain some metrics (number of visitors, number of likes, posts, etc). MC does not have any analytics blocks or modules, MC just provides information for other Analytics Systems.
 
 ## Basic Definitions
-**Source** - social network or any other data source which can be used to solve business goals. As a rule, source provides an own API to communicate with him.
+**Source** - social network or any other data source which can be used to solve business goals. As a rule, source provides an own **API** to communicate with him. As a rule *Source* has limits such as: timeframe, number of requests in one timeframe, intensity of requests (number of requests in 1 second) and so on.
 
-**Connector** - module which communicates with *Source* using corresponding API. *Connector* retrieves *Metrics Data* from Source and returns it back.
+**Connector** - module which communicates with *Source* using corresponding API. *Connector* retrieves *Metrics Data* from *Source* and returns it back.
 
 **Metrics Data** - data which contains metrics. *Metrics Data* will be defined in design in accordance with business requirements and possibilities of each particular *Source*.
 
@@ -13,11 +13,11 @@ This document is dedicated to description of offer to design and implementation 
 
 **Storage** - SQL DB (or any other storage).
 
-**Task** - module which combines *Connector(s)* and *Data Saver(s)* to process tasks. *Task* can be considered also as container of *Connectors* and *Data Savers* chain. It is assumed that *Task* will contain one *Connector* and one *Data Saver* (at least on first phase).
+**Task** - module which combines *Connector* and *Data Saver* to process tasks. *Task* contains one *Connector* and one *Data Saver*.
 
-**Scheduler** - module which starts *Task* in accordance with configured schedule. One *Engine* will contain many *Schedulers*, one *Scheduler* can start only one type of *Task*. Type of Task usually related to *Connector*.
+**Scheduler** - module which performs *Task*s in accordance with calculated schedule. One *Scheduler* can perform only one type of *Task*. Type of *Task* usually related to *Source* (for example: YouTube Scheduler, FaceBook Scheduler, etc.). Schedule is calculated in accordance with limits of each particular *Source* and business goals. An alternative name of this module - **Processor** (TBD). 
 
-**Engine** - container of *Schedulers*, *Engine* also has functions of *Engine Configuration* management, logging. Each *Engine* has an own identifier, *Engine* identifier is used to separate configuration of different *Engines* deployed into one *Cluster*.
+**Engine** - container of *Schedulers*, one *Engine* contains many *Schedulers*. *Engine* also has functions of *Engine Configuration* management, logging. Each *Engine* has an own identifier, *Engine* identifier is used to separate configuration of different *Engines* deployed into one *Cluster*.
 
 **Engine Configuration** - set of configuration data for *Engine* functioning.
 
