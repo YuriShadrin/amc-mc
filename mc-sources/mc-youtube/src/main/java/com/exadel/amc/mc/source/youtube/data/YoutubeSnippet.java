@@ -3,7 +3,7 @@ package com.exadel.amc.mc.source.youtube.data;
 import java.util.Date;
 import java.util.List;
 
-import com.exadel.amc.mc.source.youtube.rest.YoutubeDataAdapter;
+import com.exadel.amc.mc.source.youtube.rest.YoutubeDateAdapter;
 import com.google.gson.annotations.JsonAdapter;
 
 public class YoutubeSnippet {
@@ -12,7 +12,7 @@ public class YoutubeSnippet {
     
     private String description;
     
-    @JsonAdapter(YoutubeDataAdapter.class)
+    @JsonAdapter(YoutubeDateAdapter.class)
     private Date publishedAt;
     private Localized localized;
     private Thumbnails thumbnails;

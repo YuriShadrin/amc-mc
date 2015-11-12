@@ -12,13 +12,12 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
 
-public class YoutubeDataAdapter extends TypeAdapter<Date> {
+public class YoutubeDateAdapter extends TypeAdapter<Date> {
     private DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
 
     @Override
     public void write(JsonWriter out, Date value) throws IOException {
     }
-
 
     @Override
     public Date read(JsonReader in) throws IOException {

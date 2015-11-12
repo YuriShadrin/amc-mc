@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import com.exadel.amc.mc.engine.Engine;
 import com.exadel.amc.mc.engine.impl.EngineInstance;
 
+// TODO: need to restart engine each 0h UTC 
 public class EngineLauncher implements ServletContextListener {
 
     public static final String MCENGINE = "MC$ENGINE";
